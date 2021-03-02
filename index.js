@@ -4,7 +4,9 @@ const robots = {
 }
 
 function start(){
-	const content = {}
+	const content = {
+		maximumSentences: 7
+	}
 
 	content.searchTerm = askAndReturnSearchTerm()
 	content.prefix = askAndReturnPrefix()
@@ -16,14 +18,14 @@ function start(){
 	}
 
 	function askAndReturnPrefix(){
-		const prefixes = ['Quem e', 'O que e', 'a Historia do']
+		const prefixes = ['who is', 'What is', 'The history of']
 		const selectedPrefixIndex = readline.keyInSelect(prefixes, 'Escolha uma opcao')
 		const selectedPrefixText = prefixes[selectedPrefixIndex]
 
 		return selectedPrefixText
 	}
 
-	console.log(content)
+	console.log(JSON.stringify(content, null, 4))
 
 
 }
